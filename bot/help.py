@@ -22,7 +22,7 @@ async def help_command(update: Update, context: CallbackContext):
         await asyncio.sleep(1)
         message = await update.message.reply_text(f'/whatsapp \n /count \n /cast \n /ccast')
         await asyncio.sleep(1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'/whatsapp  -  to get WhatsApp mod apks \n /count  -  to get user count \n /cast  -  to send broadcast msg to users \n /ccast  -  to send msg to chanel')
+        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'/whatsapp  -  to get WhatsApp mod apks \n /count         -  to get user count \n /cast             -  to send broadcast msg to users \n /ccast          -  to send msg to chanel')
    
     else:
         username = f"@{username}"
