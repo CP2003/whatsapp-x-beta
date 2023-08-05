@@ -17,12 +17,18 @@ async def help_command(update: Update, context: CallbackContext):
         username = f"{first_name} {last_name}" if first_name and last_name else "Anonymous"
     elif user_id == ADMIN_USER_ID:
         username = "@Admin"
+        await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
+        await context.bot.send_chat_action(chat_id=user_id, action='typing')
+        await asyncio.sleep(1)
+        message = await update.message.reply_text(f'/whatsapp \n /count \n /cast \n /ccast')
+        await asyncio.sleep(1)
+        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'/whatsapp  -  to get WhatsApp mod apks \n /count  -  to get user count \n /cast  -  to send broadcast msg to users \n /ccast  -  to send msg to chanel')
+   
     else:
         username = f"@{username}"
-
-    await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
-    await context.bot.send_chat_action(chat_id=user_id, action='typing')
-    await asyncio.sleep(1)
-    message = await update.message.reply_text('/whatsapp')
-    await asyncio.sleep(1)
-    await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text='/whatsapp  -  to get WhatsApp mod apks')
+        await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
+        await context.bot.send_chat_action(chat_id=user_id, action='typing')
+        await asyncio.sleep(1)
+        message = await update.message.reply_text('/whatsapp')
+        await asyncio.sleep(1)
+        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text='/whatsapp  -  to get WhatsApp mod apks')
