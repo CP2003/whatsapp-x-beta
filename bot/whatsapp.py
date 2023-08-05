@@ -118,7 +118,7 @@ async def send_com_gbwhatsapp_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your FM Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp Apk file")
 
 
 async def send_com_gbwhatsapp2_file(query):
@@ -127,7 +127,7 @@ async def send_com_gbwhatsapp2_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp2_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your GB Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp 2 Apk file")
 
 
 async def send_com_gbwhatsapp3_file(query):
@@ -136,7 +136,7 @@ async def send_com_gbwhatsapp3_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp3_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your YO Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp 3 Apk file")
 
 
 async def send_fouad_mod_options_inline(update: Update):
