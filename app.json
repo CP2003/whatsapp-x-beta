@@ -1,0 +1,61 @@
+{"name": "Whatsapp-X",
+    "description": "Telegram file store bott",
+    "logo": "",
+    "keywords": ["telegram"],
+    "repository": "https://github.com/CP2003/whatsapp-x",
+    "stack": "container",
+    "env": {
+        "TOKEN": {
+			"description": "Enter Your token. if doesn't have get it from father bot",
+			"required": true,
+			"value": ""
+		},
+		"BOT_USERNAME": {
+			"description": "Enter you bot Username",
+			"required": true,
+			"value": "my_tele_001_bot"
+		},
+		"ADMIN_USER_ID": {
+			"description": "Enter your telegram ID",
+			"required": true,
+			"value": "5040666523"
+		},
+		"fmmods_whatsapp_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/2"
+		},
+	        "fmmods_fmwhatsapp_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/3"
+		},
+	        "fmmods_gbwhatsapp_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/4"
+		},
+	        "fmmods_yowhatsapp_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/5"
+		},
+
+
+	        "sammods_whatsapp_link": {
+			"required": true,
+			"value": " https://t.me/file_store_4_mod_WA/14"
+		},
+	        "sammods_gbwhatsapp_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/15"
+		},
+	        "sammods_gbwhatsapp2_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/16"
+		},
+	        "sammods_gbwhatsapp3_link": {
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/17"
+		}
+    },
+    "addons": [{
+      "plan": "heroku-postgresql"
+    }]
+  }
