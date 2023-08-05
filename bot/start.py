@@ -18,7 +18,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     last_name: str = update.message.from_user.last_name
 
     if not username:
-        username = f"{first_name} {last_name}" if first_name and last_name else "Anonymous"
+        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
     else:
         username = f"@{username}"
 
