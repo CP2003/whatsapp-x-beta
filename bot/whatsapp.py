@@ -3,6 +3,8 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes
 import telegram.error ,asyncio, time
 
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+
 fmmods_whatsapp_link = os.environ.get('fmmods_whatsapp_link')
 fmmods_fmwhatsapp_link = os.environ.get('fmmods_fmwhatsapp_link')
 fmmods_gbwhatsapp_link = os.environ.get('fmmods_gbwhatsapp_link')
