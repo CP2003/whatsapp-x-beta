@@ -38,6 +38,6 @@ async def help_command(update: Update, context: CallbackContext):
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
-        message = await update.message.reply_text('/whatsapp')
+        message = await update.message.reply_text(f'⭕️ /whatsapp ')
         await asyncio.sleep(1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text='/whatsapp  -  to get WhatsApp mod apks')
+        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks')
