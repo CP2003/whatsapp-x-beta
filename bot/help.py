@@ -5,6 +5,7 @@ from telegram.ext import CallbackContext
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 async def help_command(update: Update, context: CallbackContext):
+    message_type: str = update.message.chat.type
     user_id: str = str(update.message.chat.id)
     username: str = update.message.from_user.username
     first_name: str = update.message.from_user.first_name
