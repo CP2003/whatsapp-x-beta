@@ -32,7 +32,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_interacted_users()
 
         # Notify the admin about the new user
-        if user_id != ADMIN_USER_ID:
+        if user_id == ADMIN_USER_ID:
             user_count = len(interacted_users) - 1
             admin_message = f"🆕 New User!\nTotal: {user_count}\nName: {username}"
             try:
