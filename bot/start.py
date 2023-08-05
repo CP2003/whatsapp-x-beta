@@ -22,10 +22,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         username = f"@{username}"
 
-    if user_id == ADMIN_USER_ID:
-        user_id = "Admin"
-        username = "@Admin"
-
     # Check if the user is not already in interacted_users
     if user_id in interacted_users:
         interacted_users.add(user_id)
@@ -33,6 +29,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         # Notify the admin about the new user
         if user_id == ADMIN_USER_ID:
+            username = "@Admin"
             user_count = len(interacted_users) - 1
             admin_message = f"🆕 New User!\nTotal: {user_count}\nName: {username}"
             try:
