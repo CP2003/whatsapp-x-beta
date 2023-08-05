@@ -2,6 +2,7 @@ import os
 import asyncio
 from telegram import Update
 from telegram.ext import CallbackContext
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 async def help_command(update: Update, context: CallbackContext):
     user_id: str = str(update.message.chat.id)
