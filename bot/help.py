@@ -29,7 +29,7 @@ async def help_command(update: Update, context: CallbackContext):
         await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -to get WhatsApp mod apks \n\n ⭕️ /count \n -to get user count \n\n ⭕️ /cast \n -to send broadcast msg to users \n\n ⭕️ /ccast \n -to send msg to chanel')
         await asyncio.sleep(0.1)
         await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -to get WhatsApp mod apks \n\n ⭕️ /count \n -to get user count \n\n ⭕️ /cast \n -to send broadcast msg to users \n\n ⭕️ /ccast \n -to send msg to chanel \n\n ⭕️ /allvar \n -to get all heroku variables')
-         await asyncio.sleep(0.1)
+        await asyncio.sleep(0.1)
         await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -to get WhatsApp mod apks \n\n ⭕️ /count \n -to get user count \n\n ⭕️ /cast \n -to send broadcast msg to users \n\n ⭕️ /ccast \n -to send msg to chanel \n\n ⭕️ /allvar \n -to get all heroku variables \n\n ⭕️ /edit \n -to edit heroku variables')
 
     
