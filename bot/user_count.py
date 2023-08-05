@@ -9,9 +9,6 @@ from .interacted_user import interacted_users, create_interacted_users_table, lo
 DATABASE_URL = os.environ.get('DATABASE_URL')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
-def mono_effect:
-    return f"`Total users  : {user_count}`"
-
 async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Check if the user is an admin
@@ -24,7 +21,7 @@ async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_count = len(interacted_users) - 1
 
     # Send the user count to the admin
-    await update.message.reply_text(mono_effect)
+    await update.message.reply_text(f"Total Users  :   {user_count} ")
 
 
 
