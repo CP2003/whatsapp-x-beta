@@ -1,6 +1,8 @@
 import os
 from telegram import Update
 
+from bot.interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
+
 async def cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
     user_id = str(update.message.from_user.id)
