@@ -16,6 +16,7 @@ from bot.heroku import send_all_vars_command, edit_var_command
 from bot.inlinesearch import inline_search
 from bot.handle_message import handle_message
 from bot.handle_button import handle_button
+from bot.broadcast import cast_command
 
 
 
