@@ -3,6 +3,10 @@ from telegram import Update
 
 from bot.interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 
+BOT_USERNAME = os.environ.get('BOT_USERNAME')
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
 async def cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
     user_id = str(update.message.from_user.id)
