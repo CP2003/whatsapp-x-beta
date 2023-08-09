@@ -23,7 +23,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         username = f"@{username}"
 
     # Check if the user is not already in interacted_users
-    if user_id not in interacted_users:
+    if user_id in interacted_users:
         interacted_users.add(user_id)
         save_interacted_users()
 
