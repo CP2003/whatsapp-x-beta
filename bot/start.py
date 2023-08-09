@@ -49,8 +49,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        print(user_name)
-        print(f"{new_user_name} {last_name}")
+        print(f"name :{new_user_name} {last_name} \n username : {user_name}")
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
 
 
