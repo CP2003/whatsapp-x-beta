@@ -9,7 +9,7 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
     results = []
 
     try:
-        if 'whats' in query:
+        if 'w' in query:
             # First result: Fouad Mod Whatsapp
             fouad_button = InlineKeyboardButton('Fouad Mod Whatsapp', url=f'https://t.me/{BOT_USERNAME}?start=send_fouad')
             # Second result: Sam Mods Whatsapp
