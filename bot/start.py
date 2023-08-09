@@ -16,6 +16,12 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     new_user_name = update.message.from_user.first_name
     username: str = update.message.from_user.username
     last_name: str = update.message.from_user.last_name
+
+    if not username:
+        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
+
+    else:
+        username = f"@{username}"
     
     if user_id not in interacted_users:
         print("wada")
@@ -23,13 +29,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_interacted_users()
 
         if user_id != ADMIN_USER_ID:
-            user_count = len(interacted_users) - 1
-            if not username:
-                username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
-
-            else:
-                username = f"@{username}"
-                    
+            user_count = len(interacted_users) - 1   
             admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
             try:
                 await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
