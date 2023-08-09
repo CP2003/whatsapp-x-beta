@@ -47,12 +47,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
 
     
-    
-    if not username:
-        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
-
-    else:
-        username = f"@{username}"
         
 
 
