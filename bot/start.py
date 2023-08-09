@@ -29,7 +29,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except telegram.error.BadRequest:
                 print(f"Failed to send message to admin {ADMIN_USER_ID}")
 
-    if command == 'send_fouad':
+    elif command == 'send_fouad':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
         await send_fouad_mod_options_inline(update)
