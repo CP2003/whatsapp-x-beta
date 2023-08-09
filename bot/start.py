@@ -17,7 +17,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username: str = update.message.from_user.username
     last_name: str = update.message.from_user.last_name
     
-    if user_id in interacted_users:
+    if user_id not in interacted_users:
         print("wada")
         interacted_users.add(user_id)
         save_interacted_users()
