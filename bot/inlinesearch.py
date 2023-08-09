@@ -1,6 +1,6 @@
 import os
 from telegram import Bot , Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler , Updater
+from telegram.ext import   ContextTypes 
 import telegram.error ,asyncio, time
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 
