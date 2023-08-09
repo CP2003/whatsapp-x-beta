@@ -19,11 +19,9 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if not username:
         username = f"{new_user_name} {last_name}" 
-        print(f"{new_user_name} {last_name}")
 
     else:
         username = f"@{username}"
-        print(f"@{username}")
     
     if user_id not in interacted_users:
         print("wada")
@@ -53,6 +51,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
+        print(f"@{username}")
+        print(f"{new_user_name} {last_name}")
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
 
 
