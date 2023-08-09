@@ -26,6 +26,7 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         message_text='Please select a WhatsApp mod:'
                     ),
                     description='Download Fouad Mod Whatsapp APK files',
+                    thumb_url='https://i.ibb.co/YL52HVZ/photo-2023-08-05-06-37-35.jpg', 
                     reply_markup=reply_markup
                 )
             )
