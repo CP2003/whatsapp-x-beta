@@ -30,7 +30,6 @@ def error(update, context):
 
 if __name__ == '__main__':
     app = Application.builder().token(TOKEN).build()
-
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
     app.add_handler(CommandHandler('whatsapp', whatsapp_command))
