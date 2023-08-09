@@ -21,7 +21,7 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
             results.append(
                 InlineQueryResultArticle(
                     id='1',
-                    title='Fouad Mod Whatsapp',
+                    title='Whatsapp Mod Apks',
                     input_message_content=InputTextMessageContent(
                         message_text='Please select a WhatsApp mod:'
                     ),
