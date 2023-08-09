@@ -18,9 +18,6 @@ from bot.handle_message import handle_message
 from bot.handle_button import handle_button
 from bot.broadcast import cast_command
 
-
-
-
 print('Starting up bot...')
 interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
@@ -28,13 +25,8 @@ BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
-
-
-
 def error(update, context):
     print(f'Update {update} caused an error: {context.error}')
-    # You can handle errors here if needed
-
 
 if __name__ == '__main__':
     app = Application.builder().token(TOKEN).build()
@@ -51,10 +43,6 @@ if __name__ == '__main__':
     app.add_handler(CallbackQueryHandler(handle_button))
     app.add_handler(MessageHandler(filters.Text(), handle_message))
     app.add_error_handler(error)
-
-    # Start the Bot
-
-
 
     print('Polling...')
 
