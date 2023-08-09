@@ -17,35 +17,12 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username: str = update.message.from_user.username
     last_name: str = update.message.from_user.last_name
 
-    if not username:
-        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
-
-    if username:
-        username = f"@{username}"
-        
-    if user_id not in interacted_users:
-        interacted_users.add(user_id)
-        save_interacted_users()
-        
-
-    # Check if the user is not already in interacted_users
-
-
-        # Notify the admin about the new user
-    if user_id != ADMIN_USER_ID:
-            user_count = len(interacted_users) - 1
-            admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
-            try:
-                await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
-            except telegram.error.BadRequest:
-                print(f"Failed to send message to admin {ADMIN_USER_ID}")
-
-    elif command == 'send_fouad':
+    if command == 'send_fouad':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
         await send_fouad_mod_options_inline(update)
 
-    elif command == 'send_sam':
+    if command == 'send_sam':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
         await send_sam_mod_options_inline(update)
@@ -56,5 +33,27 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
+
+    
+    
+    if not username:
+        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
+
+    if username:
+        username = f"@{username}"
+        
+    if user_id not in interacted_users:
+        interacted_users.add(user_id)
+        save_interacted_users()
+
+        if user_id != ADMIN_USER_ID:
+            user_count = len(interacted_users) - 1
+            admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
+            try:
+                await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
+            except telegram.error.BadRequest:
+                print(f"Failed to send message to admin {ADMIN_USER_ID}")
+
+    
 
 
