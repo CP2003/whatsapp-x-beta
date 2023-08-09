@@ -22,7 +22,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await asyncio.sleep(1)
         await send_fouad_mod_options_inline(update)
 
-    if command == 'send_sam':
+    elif command == 'send_sam':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
         await send_sam_mod_options_inline(update)
