@@ -39,7 +39,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not username:
         username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
 
-    if username:
+    else:
         username = f"@{username}"
         
     if user_id not in interacted_users:
