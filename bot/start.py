@@ -16,6 +16,18 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     new_user_name = update.message.from_user.first_name
     username: str = update.message.from_user.username
     last_name: str = update.message.from_user.last_name
+    
+    if user_id not in interacted_users:
+        interacted_users.add(user_id)
+        save_interacted_users()
+
+        if user_id != ADMIN_USER_ID:
+            user_count = len(interacted_users) - 1
+            admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
+            try:
+                await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
+            except telegram.error.BadRequest:
+                print(f"Failed to send message to admin {ADMIN_USER_ID}")
 
     if command == 'send_fouad':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
@@ -42,17 +54,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         username = f"@{username}"
         
-    if user_id not in interacted_users:
-        interacted_users.add(user_id)
-        save_interacted_users()
 
-        if user_id != ADMIN_USER_ID:
-            user_count = len(interacted_users) - 1
-            admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
-            try:
-                await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
-            except telegram.error.BadRequest:
-                print(f"Failed to send message to admin {ADMIN_USER_ID}")
 
     
 
