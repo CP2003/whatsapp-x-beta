@@ -1,7 +1,7 @@
 import os
 from telegram import Bot , Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
 from telegram.ext import   ContextTypes 
-import telegram.error ,asyncio, time
+import telegram.error 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 
 async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
