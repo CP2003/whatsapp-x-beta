@@ -24,11 +24,11 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         if user_id != ADMIN_USER_ID:
             user_count = len(interacted_users) - 1
-                if not username:
-                    username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
+            if not username:
+                username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
 
-                else:
-                    username = f"@{username}"
+            else:
+                username = f"@{username}"
                     
             admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {username}"
             try:
