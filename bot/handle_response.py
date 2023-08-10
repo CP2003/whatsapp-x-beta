@@ -11,10 +11,12 @@ def handle_response(text: str):
             [InlineKeyboardButton('Sam Mods', callback_data='sam')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        
+
+        print_letter_by_letter()
         reply_text = 'Please select your Whatsapp:'
         return reply_text, reply_markup
 
+    print_letter_by_letter()
     reply_text = f"\"{text}\" is not in my database. Try /help to get commands."
     return reply_text, None
 
