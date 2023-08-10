@@ -19,11 +19,9 @@ def handle_response(update: Update, text: str):
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         reply_text = 'Please select your Whatsapp:'
-        return reply_text, reply_markup
+        return send_letter_by_letter(reply_text, reply_markup)
 
     reply_text = f"\"{text}\" is not in my database. Try /help to get commands."
     return reply_text, None
 
 # Example usage (assuming you have the update object from the Telegram API)
-response_text, reply_markup = handle_response(update, "Hello, how can I help you?")
-send_letter_by_letter(update, response_text)
