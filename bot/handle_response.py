@@ -19,7 +19,7 @@ def handle_response(update: Update, text: str):
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         text = 'Please select your Whatsapp:'
-        return send_letter_by_letter(text) ,reply_markup
+        return text ,reply_markup
 
     reply_text = f"\"{text}\" is not in my database. Try /help to get commands."
     return reply_text, None
