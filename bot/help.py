@@ -27,7 +27,7 @@ async def help_command(update: Update, context: CallbackContext):
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
-        message = await update.message.reply_text("\n".join([f"⭕️ {cmd}" for cmd in commands[:1]]))
+        message = await update.message.reply_text("\n".join([f"⭕️ {cmd}" for cmd in commands]))
 
 
         for i in range(1, len(commands) + 1):
