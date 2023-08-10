@@ -1,7 +1,7 @@
 from telegram import InlineKeyboardButton , InlineKeyboardMarkup
 import asyncio, time
 
-async def handle_response(text: str):
+async def handle_response(query, text: str): 
     processed = text.lower()
 
     if 'whatsapp' in processed:
