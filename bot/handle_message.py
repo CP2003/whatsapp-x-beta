@@ -6,7 +6,7 @@ from bot.handle_response import handle_response
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def handle_message(query , update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
     text: str = update.message.text
     user_id: str = str(update.message.chat.id)
