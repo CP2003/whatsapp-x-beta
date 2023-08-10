@@ -4,21 +4,14 @@ from telegram import Update
 from telegram.ext import CallbackContext
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
-options = [
+commands = [
     "/whatsapp - to get WhatsApp mod apks",
     "/count - to get user count",
     "/cast - to send broadcast msg to users",
-    "/ccast - to send msg to chanel",
-    "/allvar - to get all heroku variables",
-    "/edit - to edit heroku variables"
+    "/ccast - to send msg to channel",
+    "/allvar - to get all Heroku variables",
+    "/edit - to edit Heroku variables"
 ]
-
-async def send_and_edit(update, text_list):
-    message = await update.message.reply_text("")
-    for text in text_list:
-        await message.edit_text(text)
-        await asyncio.sleep(0.1)
-
 async def help_command(update: Update, context: CallbackContext):
     message_type: str = update.message.chat.type
     user_id: str = str(update.message.chat.id)
@@ -35,7 +28,15 @@ async def help_command(update: Update, context: CallbackContext):
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
-        await send_and_edit(update, options)
+        message = await update.message.reply_text("\n".join([f"⭕️ {cmd}" for cmd in commands]))
+
+    for i in range(1, len(commands) + 1):
+        await asyncio.sleep(0.1)
+        await context.bot.edit_message_text(
+            chat_id=user_id,
+            message_id=message.message_id,
+            text="\n".join([f"⭕️ {cmd}" for cmd in commands[:i]])
+        )
     else:
         username = f"@{username}"
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
