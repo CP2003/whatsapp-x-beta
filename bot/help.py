@@ -29,13 +29,13 @@ async def help_command(update: Update, context: CallbackContext):
         await asyncio.sleep(1)
         message = await update.message.reply_text("\n".join([f"⭕️ {cmd}" for cmd in commands]))
 
-    for i in range(1, len(commands) + 1):
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(
-            chat_id=user_id,
-            message_id=message.message_id,
-            text="\n".join([f"⭕️ {cmd}" for cmd in commands[:i]])
-        )
+        for i in range(1, len(commands) + 1):
+            await asyncio.sleep(0.1)
+            await context.bot.edit_message_text(
+                chat_id=user_id,
+                message_id=message.message_id,
+                text="\n".join([f"⭕️ {cmd}" for cmd in commands[:i]])
+            )
     elif not username:
         username = f"{first_name} {last_name}" 
     else:
