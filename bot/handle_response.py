@@ -1,4 +1,6 @@
 from telegram import InlineKeyboardButton , InlineKeyboardMarkup , Update
+import asyncio
+
 
 def handle_response(text: str):
     processed = text.lower()
