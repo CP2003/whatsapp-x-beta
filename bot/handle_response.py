@@ -16,7 +16,6 @@ async def senwa(query):
         [InlineKeyboardButton('Fouad Mods', callback_data='fouad')],
         [InlineKeyboardButton('Sam Mods', callback_data='sam')]
          ]    
-    return 'Please select your Whatsapp:', reply_markup
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.message.edit_reply_markup(reply_markup=reply_markup)
 
