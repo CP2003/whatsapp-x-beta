@@ -5,7 +5,7 @@ def handle_response(text: str):
     processed = text.lower()
 
     if 'whatsapp' in processed:
-        return senwa(query)
+        await senwa(query)
 
     return f"\"{text}\" is not in my data basse  \n \n \n  Try /help to get commands", None
 
