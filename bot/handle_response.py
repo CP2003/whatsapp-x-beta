@@ -4,7 +4,7 @@ def handle_response(text: str):
     processed = text.lower()
 
     if 'whatsapp' in processed:
-        whatsapp_opt()
+        return whatsapp_opt(update)
 
     return f"\"{text}\" is not in my data basse  \n \n \n  Try /help to get commands", None
 
