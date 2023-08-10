@@ -38,7 +38,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             return
     else:
-        response, reply_markup = handle_response(text)
+        response, reply_markup = handle_response(query)
 
     if reply_markup is not None:
         await update.message.reply_text(response, reply_markup=reply_markup)
