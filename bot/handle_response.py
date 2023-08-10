@@ -1,4 +1,4 @@
-from telegram import InlineKeyboardButton , InlineKeyboardMarkup
+from telegram import InlineKeyboardButton , InlineKeyboardMarkup , Update
 
 def handle_response(text: str):
     processed = text.lower()
