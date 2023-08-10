@@ -21,9 +21,8 @@ async def help_command(update: Update, context: CallbackContext):
     user_id = str(update.message.from_user.id)
     group_chat_id = -707701170
     
-    if not username:
-        username = f"{first_name} {last_name}" if first_name and last_name else "Anonymous"
-    elif user_id == ADMIN_USER_ID:
+   
+    if user_id == ADMIN_USER_ID:
         username = "@Admin"
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
@@ -37,6 +36,8 @@ async def help_command(update: Update, context: CallbackContext):
             message_id=message.message_id,
             text="\n".join([f"⭕️ {cmd}" for cmd in commands[:i]])
         )
+    elif not username:
+        username = f"{first_name} {last_name}" 
     else:
         username = f"@{username}"
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
