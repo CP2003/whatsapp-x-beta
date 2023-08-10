@@ -4,15 +4,13 @@ def handle_response(text: str):
     processed = text.lower()
 
     if 'whatsapp' in processed:
-        return whatsapp_opt()
+        return text_wha(query)
 
     return f"\"{text}\" is not in my data basse  \n \n \n  Try /help to get commands", None
 
 
-async def whatsapp_opt(update: Update):
-    user_id = str(update.message.from_user.id)
-
-    # Create an inline keyboard with the options
+async def text_wha(query):
+    await query.message.edit_text(text="Download Fouad Mod Whatsapp APK files - Fouad Mods")
     keyboard = [
         [InlineKeyboardButton('Whatsapp', callback_data='fmmods_whatsapp')],
         [InlineKeyboardButton('FM Whatsapp', callback_data='fmmods_fmwhatsapp')],
@@ -20,6 +18,5 @@ async def whatsapp_opt(update: Update):
         [InlineKeyboardButton('Yo Whatsapp', callback_data='fmmods_yowhatsapp')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.message.edit_reply_markup(reply_markup=reply_markup)
 
-    # Send the message to the user
-    await update.message.reply_text('Download Fouad Mod Whatsapp APK files:', reply_markup=reply_markup)
