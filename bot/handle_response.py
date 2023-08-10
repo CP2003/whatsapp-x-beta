@@ -1,6 +1,10 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 import time
 
+def print_letter_by_letter(update, text, delay=0.1):
+    for letter in text:
+        update.message.reply_text(letter, parse_mode='Markdown')
+        time.sleep(delay)
 
 def handle_response(text: str):
     processed = text.lower()
@@ -11,17 +15,13 @@ def handle_response(text: str):
             [InlineKeyboardButton('Sam Mods', callback_data='sam')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-
-        print_letter_by_letter()
+        
         reply_text = 'Please select your Whatsapp:'
         return reply_text, reply_markup
 
-    print_letter_by_letter()
     reply_text = f"\"{text}\" is not in my database. Try /help to get commands."
     return reply_text, None
 
-def print_letter_by_letter(update, text, delay=0.1):
-    for letter in text:
-        update.message.reply_text(letter, parse_mode='Markdown')
-        time.sleep(delay)
-
+# Example usage
+response_text, reply_markup = handle_response("Hello, how can I help you?")
+print_letter_by_letter(response_text)
