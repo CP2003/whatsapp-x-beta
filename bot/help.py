@@ -31,7 +31,7 @@ async def help_command(update: Update, context: CallbackContext):
 
 
         for i in range(1, len(commands) + 1):
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(0.2)
             await context.bot.edit_message_text(
                 chat_id=user_id,
                 message_id=message.message_id,
