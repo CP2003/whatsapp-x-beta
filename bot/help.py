@@ -4,6 +4,21 @@ from telegram import Update
 from telegram.ext import CallbackContext
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
+options = [
+    "/whatsapp - to get WhatsApp mod apks",
+    "/count - to get user count",
+    "/cast - to send broadcast msg to users",
+    "/ccast - to send msg to chanel",
+    "/allvar - to get all heroku variables",
+    "/edit - to edit heroku variables"
+]
+
+async def send_and_edit(update, text_list):
+    message = await update.message.reply_text("")
+    for text in text_list:
+        await message.edit_text(text)
+        await asyncio.sleep(0.1)
+
 async def help_command(update: Update, context: CallbackContext):
     message_type: str = update.message.chat.type
     user_id: str = str(update.message.chat.id)
@@ -20,19 +35,7 @@ async def help_command(update: Update, context: CallbackContext):
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
-        message = await update.message.reply_text(f'⭕️ /whatsapp \n -     to get WhatsApp mod apks')
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks \n\n ⭕️ /count \n -     to get user count')
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks \n\n ⭕️ /count \n -     to get user count \n\n ⭕️ /cast \n -     to send broadcast msg to users')
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks \n\n ⭕️ /count \n -     to get user count \n\n ⭕️ /cast \n -     to send broadcast msg to users \n\n ⭕️ /ccast \n -     to send msg to chanel')
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks \n\n ⭕️ /count \n -     to get user count \n\n ⭕️ /cast \n -     to send broadcast msg to users \n\n ⭕️ /ccast \n -     to send msg to chanel \n\n ⭕️ /allvar \n -     to get all heroku variables')
-        await asyncio.sleep(0.1)
-        await context.bot.edit_message_text(chat_id=user_id, message_id=message.message_id, text=f'⭕️ /whatsapp \n -     to get WhatsApp mod apks \n\n ⭕️ /count \n -     to get user count \n\n ⭕️ /cast \n -     to send broadcast msg to users \n\n ⭕️ /ccast \n -     to send msg to chanel \n\n ⭕️ /allvar \n -     to get all heroku variables \n\n ⭕️ /edit \n -     to edit heroku variables')
-
-    
+        await send_and_edit(update, options)
     else:
         username = f"@{username}"
         await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/help"')
