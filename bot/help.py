@@ -5,12 +5,12 @@ from telegram.ext import CallbackContext
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 commands = [
-    "/whatsapp - \n      to get WhatsApp mod apks",
-    "/count - \n      to get user count",
-    "/cast - \n      to send broadcast msg to users",
-    "/ccast - \n      to send msg to channel",
-    "/allvar - \n      to get all Heroku variables",
-    "/edit - \n      to edit Heroku variables"
+    "/whatsapp  \n      - to get WhatsApp mod apks",
+    "/count  \n      - to get user count",
+    "/cast  \n      - to send broadcast msg to users",
+    "/ccast  \n      - to send msg to channel",
+    "/allvar  \n      - to get all Heroku variables",
+    "/edit  \n      - to edit Heroku variables"
 ]
 async def help_command(update: Update, context: CallbackContext):
     message_type: str = update.message.chat.type
